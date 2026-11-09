@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>陳沛婕、413210450、80分</title>
+<style>
+body{margin:0;padding:24px 14px;background:#fff8fc;color:#302936;font-family:system-ui,"Noto Sans TC",sans-serif}.wrap{max-width:900px;margin:auto}.panel{background:white;border:1px solid #eedce8;border-radius:18px;padding:22px;margin:14px 0}h1{color:#984875}h2{color:#623e56;font-size:1.15rem}.score{font-size:2rem;font-weight:800;color:#a04478}.muted{color:#766d78}pre{white-space:pre-wrap;background:#292433;color:#fff;padding:14px;border-radius:10px;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:9px;border-bottom:1px solid #eee3eb}label{display:block;margin:10px 0;font-weight:600}input[type=text],textarea{width:100%;padding:10px;border:1px solid #ddcbd7;border-radius:9px;font:inherit}textarea{min-height:60px}.check{display:flex;align-items:center;gap:8px}.check input{width:auto}button{background:#a94e83;color:white;border:0;border-radius:9px;padding:10px 16px;font:inherit;cursor:pointer}@media(max-width:600px){body{padding:12px}.panel{padding:16px}}
+</style></head><body><main class="wrap">
+<section class="panel"><h1 id="heading">陳沛婕、413210450、80分</h1><p class="muted">Fortran 1 到 N 加總作業成果與 AI 任務評分系統</p><label>姓名<input id="name" type="text" value="陳沛婕" oninput="update()"></label><label>學號<input id="sid" type="text" value="413210450" oninput="update()"></label><div class="score"><span id="total">80</span> / 100 分</div><p id="parts">第一題 20｜第二題 20｜第三題 20｜第四題 0｜第五題 20</p></section>
+<section class="panel"><h2>第一題｜撰寫及編譯 Fortran 程式（20 分）</h2><p>題目：指揮 AI 產生計算 1 加到 N 的 Fortran 程式，完成編譯並確認能執行輸出。</p><pre>program sum_to_n
+    implicit none
+    integer :: n, i
+    integer(kind=8) :: total
+    print *, 'Enter a positive integer N:'
+    read *, n
+    if (n < 1) then
+        print *, 'Error: N must be a positive integer.'
+        stop 1
+    end if
+    total = 0
+    do i = 1, n
+        total = total + i
+    end do
+    print *, 'Sum from 1 to ', n, ' = ', total
+end program sum_to_n</pre><p>編譯指令：<code>gfortran -Wall -Wextra -std=f2008 sum_n.f90 -o sum_n</code></p><label class="check"><input class="item" type="checkbox" checked onchange="update()"> 已完成程式撰寫、編譯及執行（20 分）</label><textarea>GNU Fortran 14.2.0 編譯成功，程式可讀取正整數 N 並輸出總和。</textarea></section>
+<section class="panel"><h2>第二題｜三次隨機驗證（20 分）</h2><p>題目：執行程式三次隨機驗證，以確認功能正確。</p><table><tr><th>N</th><th>程式輸出</th><th>公式驗算</th><th>結果</th></tr><tr><td>81</td><td>3321</td><td>81×82÷2=3321</td><td>PASS</td></tr><tr><td>9</td><td>45</td><td>9×10÷2=45</td><td>PASS</td></tr><tr><td>84</td><td>3570</td><td>84×85÷2=3570</td><td>PASS</td></tr></table><label class="check"><input class="item" type="checkbox" checked onchange="update()"> 三次測試均正確（20 分）</label><textarea>三次程式輸出均符合 N(N+1)/2 的公式驗算。</textarea></section>
+<section class="panel"><h2>第三題｜Git 版本控制（20 分）</h2><p>題目：原版程式 commit，再加入逐行註解、編譯驗證並再次 commit。</p><p>原版 commit：<code>c23a549</code></p><p>註解版 commit：<code>79c5ace</code></p><p>整理網頁及測試證明 commit：<code>feda952</code></p><p>本機 Git 歷史可查核以上紀錄；註解版另存為 <code>sum_n_annotated.f90</code>。</p><label class="check"><input class="item" type="checkbox" checked onchange="update()"> 已完成兩次版本紀錄及註解版編譯驗證（20 分）</label><textarea>本機 Git log 可查到原版與註解版 commit。</textarea></section>
+<section class="panel"><h2>第四題｜推送至 GitHub 雲端儲存（20 分）</h2><p>題目：將本地端已進行版本控制的程式碼傳送到 GitHub。</p><p>Repository：<a href="https://github.com/peijei0331-cyber/413210450">peijei0331-cyber/413210450</a></p><label>GitHub 專案網址<input id="repo" type="text" value="https://github.com/peijei0331-cyber/413210450"></label><label class="check"><input class="item" type="checkbox" onchange="update()"> 已確認所有檔案成功推送且公開可讀（20 分）</label><textarea placeholder="請貼上推送成功證明。"></textarea><p class="muted">待確認檔案可公開瀏覽後才勾選給分。</p></section>
+<section class="panel"><h2>第五題｜AI 任務達成評分系統（20 分）</h2><p>題目：製作允許輸入前四題結果、達標就給分的 AI 評分系統。</p><p>本頁提供前四題完成狀態勾選、證明輸入欄位與自動計分，每題達標 20 分。</p><label class="check"><input id="fifth" type="checkbox" checked onchange="update()"> 評分系統已建立（20 分）</label><label>AI 評分結果<textarea>第一題 20/20：程式編譯與執行成功。第二題 20/20：三次測試均正確。第三題 20/20：本機 Git 原版及註解版 commit 可查核。第四題暫列 0/20：GitHub push 與 Pages 部署待確認。第五題 20/20：本頁提供前四題輸入與自動計分。現階段自評 80/100，實際成績以老師評分為準。</textarea></label></section>
+<section class="panel"><h2>公開網頁部署</h2><p>請在 GitHub 專案 Settings → Pages，選擇 Deploy from a branch、main、/(root)，按 Save。部署完成後，網址應為：</p><p><a href="https://peijei0331-cyber.github.io/413210450/">https://peijei0331-cyber.github.io/413210450/</a></p><p class="muted">請確認網址能正常開啟後，再提交至 iClass。</p><button onclick="window.print()">列印／另存 PDF</button></section>
+</main><script>
+function update(){let a=[...document.querySelectorAll('.item')].map(x=>x.checked?20:0),b=document.getElementById('fifth').checked?20:0,s=a.reduce((x,y)=>x+y,0)+b;document.getElementById('total').textContent=s;document.getElementById('parts').textContent='第一題 '+a[0]+'｜第二題 '+a[1]+'｜第三題 '+a[2]+'｜第四題 '+a[3]+'｜第五題 '+b;let n=document.getElementById('name').value||'姓名',id=document.getElementById('sid').value||'學號';document.getElementById('heading').textContent=n+'、'+id+'、'+s+'分';document.title=n+'、'+id+'、'+s+'分'}update();
+</script></body></html>
