@@ -1,0 +1,6 @@
+Compiler: GNU Fortran 14.2.0
+Compile command: gfortran -Wall -Wextra -std=f2008 sum_n.f90 -o sum_n
+
+Test 1: N = 81 | Output = 3321 | Expected = 81 * 82 / 2 = 3321 | PASS
+Test 2: N = 9  | Output = 45   | Expected = 9 * 10 / 2 = 45   | PASS
+Test 3: N = 84 | Output = 3570 | Expected = 84 * 85 / 2 = 3570 | PASS
